@@ -1,0 +1,8 @@
+Copyright (c) 2012 "Snahider" Angel Nuñez Salazar
+
+"Test Automation .NET" by Angel Nuñez Salazar is licensed under a
+Creative Commons Attribution-ShareAlike 3.0 Unported License.
+<http://creativecommons.org/licenses/by-sa/3.0/>
+
+If you have any questions about using any of this material, 
+please feel free to contact me <angel.nunez.salalazar@gmail.com>.

@@ -1,0 +1,41 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="1E02348C-C69E-43AB-9F08-986BA8422AC6/f:Stack.cs" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="1E02348C-C69E-43AB-9F08-986BA8422AC6/f:Stack.cs" caret="426" fromTop="2" />
+      <File id="1E02348C-C69E-43AB-9F08-986BA8422AC6/f:Stack.cs" caret="522" fromTop="22" />
+      <File id="1E02348C-C69E-43AB-9F08-986BA8422AC6/f:Stack.cs" caret="119" fromTop="6" />
+      <File id="1E02348C-C69E-43AB-9F08-986BA8422AC6/f:Stack.cs" caret="308" fromTop="12" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.5\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Contains`0" priority="0" />
+      <Item value="IndexOf`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Default">
+      <Item value="element" priority="2" />
+      <Item value="setup" priority="1" />
+      <Item value="TestInitialize" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

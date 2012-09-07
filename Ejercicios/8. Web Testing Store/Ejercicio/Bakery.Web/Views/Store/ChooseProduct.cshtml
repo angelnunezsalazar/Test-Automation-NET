@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Bakery.Web.Models.Product>
+<ul id="products">
+    @foreach (var product in Model)
+    {
+        <li class="product">
+            <div class="productInfo">
+                <h3>
+                    @product.Name
+                </h3>
+                <img class="product-image" src="@Url.Content("~/content/images/products/thumbnails/"+product.ImageName)" alt="@product.Name" />
+                <p class="description">
+                    @product.Description
+                </p>
+            </div>
+            <div>
+                <p class="price">
+                    @product.Price.ToString("c")
+                </p>
+                @Html.ActionLink("Order Now", "PlaceOrder",new {productId=product.Id}, new { @class = "order-button" })
+            </div>
+        </li>
+    }
+</ul>

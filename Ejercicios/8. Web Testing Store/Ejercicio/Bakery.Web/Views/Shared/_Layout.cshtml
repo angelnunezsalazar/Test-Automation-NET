@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Fourth Coffee</title>
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        <div id="page">
+            <div id="header">
+                <p class="site-title">
+                    <a href="~/">Fourth Coffee</a></p>
+                <ul id="menu">
+                    <li><a href="~/">Home</a></li>
+                </ul>
+            </div>
+            <div id="body">
+                @RenderBody()
+            </div>
+            <div id="footer">
+                &copy;@DateTime.Now.Year - Fourth Coffee
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

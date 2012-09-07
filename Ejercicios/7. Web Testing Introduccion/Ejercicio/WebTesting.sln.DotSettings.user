@@ -1,0 +1,37 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=C2F9EFC479EF467CAE452259A4AFAB6B/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=C2F9EFC479EF467CAE452259A4AFAB6B/Name/@EntryValue">SearchResultHasTheCorrectTag #4</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=C2F9EFC479EF467CAE452259A4AFAB6B/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests" type="MsTestTestClassElement" TypeName="WebTesting.Tests.StackOverflow.StackoverflowTests" Project="1AFD70B2-52BD-4A2E-BFB5-4104F3BFA44D" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests.GettingStarted_BasicFireFoxGET_LoadsPage" ParentId="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests" type="MsTestTestMethodElement" MethodName="GettingStarted_BasicFireFoxGET_LoadsPage" TypeName="WebTesting.Tests.StackOverflow.StackoverflowTests" Project="1AFD70B2-52BD-4A2E-BFB5-4104F3BFA44D" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests.ReleatedTags" ParentId="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests" type="MsTestTestMethodElement" MethodName="ReleatedTags" TypeName="WebTesting.Tests.StackOverflow.StackoverflowTests" Project="1AFD70B2-52BD-4A2E-BFB5-4104F3BFA44D" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests.ReleatedTags_PageObject" ParentId="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests" type="MsTestTestMethodElement" MethodName="ReleatedTags_PageObject" TypeName="WebTesting.Tests.StackOverflow.StackoverflowTests" Project="1AFD70B2-52BD-4A2E-BFB5-4104F3BFA44D" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests.SearchResultHasTheCorrectTag" ParentId="MsTest:WebTesting.Tests.StackOverflow.StackoverflowTests" type="MsTestTestMethodElement" MethodName="SearchResultHasTheCorrectTag" TypeName="WebTesting.Tests.StackOverflow.StackoverflowTests" Project="1AFD70B2-52BD-4A2E-BFB5-4104F3BFA44D" /&gt;&lt;/Elements&gt;&lt;/Session&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>

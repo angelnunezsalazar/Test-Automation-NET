@@ -1,0 +1,180 @@
+tSQLt Release Notes
+===================
+An online version of these release notes is available at:
+http://tsqlt.org/category/release-notes/
+
+
+Release: V1.0.4504.21220 
+
+BUG FIXES:
+1. tSQLt.NewTestClass now does not drop schema objects if the schema is not a test class
+
+---------------------------
+Release: V1.0.4496.29340 
+
+BUG FIXES:
+1. tSQLt.ResultSetFilter now supports data types introduced in SQL Server 2008 and CLR
+   datatypes.
+2. tSLQt.AssertResultSetsHaveSameMetaData now ignores "hidden" columns. For example,
+   when comparing the metadata of a view, this procedure had been including underlying
+   columns.
+
+---------------------------
+Release: V1.0.4462.23207 
+
+NEW FEATURES:
+1. tSQLt.FakeTable now supports @Defaults parameter. If @Defaults = 1 default
+   constraints will be preserved on columns.
+2. tSQLt.FakeTable now supports @ComputedColumns parameter. If 
+   @ComputedColumns = 1 computed columns will be preserved.
+
+---------------------------
+
+Release: 1.0.4413.31717
+
+NEW FEATURES:   
+1. tSQLt.Info() now reports Version and CLRVersion. These should always match!
+2. tSQLt.FakeTable now supports @Identity parameter. If @Identity = 1 the 
+   identity property of the table is preserved.
+
+---------------------------
+
+Release: V1.0.4357.27914
+
+BUG FIXES:
+1. tSQLt.SpyProcedure can handle user defined types. User defined types may be in schemas and
+   may also be not nullable.
+
+NEW FEATURES:   
+1. SetUp can be named in any combination of upper or lower case characters (e.g. setup, SETUP,
+   SeTuP, etc). 
+---------------------------
+
+Release: V1.0.4351.28410
+
+BUG FIXES:
+1. tSQLt.NewTestClass now handles schema names with spaces and other special characters
+2. tSQLt.NewTestClass now handles if a quoted name is passed for the new schema name
+
+NEW FEATURES:
+1. tSQLt.Uninstall removes tSQLt from the database
+2. tSQLt.RunWithXmlResults executes like tSQLt.Run, but produces results is XML
+3. tSQLt.TestClasses is a view that lists properties of test classes
+4. tSQLt.Tests is a view that lists properties of test cases
+5. Example.sql includes an example database and is referenced by the updated Quick Start
+   (http://tsqlt.org/quick-start)
+6. tSQLt.Info() provides information about the installed version of tSQLt.
+
+OTHER:
+1. New numbering system for the tSQLt builds. The current version is: V1.0.4351.28410
+---------------------------
+
+build.12:
+
+BUG FIXES:
+1. tSQLt.Fail now handles NULL values as parameters.
+2. Corrected XmlResultFormatter to have root element of 'testsuites' instead of 'root'.
+This improves compatibility with more continuous integration servers.
+
+NEW FEATURES:
+1. FakeTable now handles a single parameter, combining the schema and table name.
+This makes FakeTable more consistent with other methods in tSQLt.
+2. ApplyConstraint now handles two parameters, combining the schema and table 
+name as the first parameter. This makes ApplyConstraint more consistent with other 
+methods in tSQLt.
+
+---------------------------
+
+build.11:
+
+BUG FIXES:
+1. ApplyConstraint for a Foreign Key that references a Faked Table is fixed.
+2. SetClrEnabled.sql utlity file now handles database names with spaces.
+3. Test cases whose names contain a percent sign are now displayed correctly 
+in the test case output.
+
+NEW FEATURES:
+1. Warnings about renaming objects displayed when executing FakeTable or 
+ApplyConstraint are now hidden.
+2. New method: tSQLt.SuppressOutput suppresses the console output that would
+be displayed by executing a command.
+3. New method: tSQLt.CaptureOutput logs the console output from executing a 
+command into the tSQLt.CaptureOutputLog table.
+
+---------------------------
+
+build.10:
+
+BUG FIXES:
+1. Standardized capitalization of table, column, procedure and function names.
+
+NEW FEATURES:
+1. Added support for case sensitive databases.
+
+---------------------------
+
+build.9:
+
+BUG FIXES:
+1. When using tSQLt.Run or tSQLt.RunTestClass, if an object name on the dbo 
+schema had the same name as a test class, the test class could not be executed.
+
+2. If the output of an AssertTableEquals or the length of a test case name was 
+too long, an error was be produced.
+
+NEW FEATURES:
+1. A new procedure, tSQLt.NewConnection, was added which allows statements to 
+be executed synchronously in a different connection context.
+
+---------------------------
+
+build.8a:
+
+BUG FIXES:
+1. When executing tSQLt.ResultSetFilter, if the result set metadata contained 
+hidden columns then those columns would be returned in the result set output.
+The values of those columns would be null. Hidden columns are typically present
+when the base tables of a result set contain primary keys or other constraints 
+which were not selected. tSQLt.ResultSetFilter has been updated to not return 
+the hidden columns.
+
+---------------------------
+
+build.8:
+
+NEW FEATURES:
+1. SpyProcedure now supports output parameters. Details are available in the 
+User Guide. See: http://www2.sqlity.net/tsqlt/spyprocedure
+
+2. The first major sections of the User Guide are now available at:
+http://www.tsqlt.org - On the right hand side is a link for the User Guide.
+
+---------------------------
+
+build.7:
+
+IMPORTANT: tSQLt now utilizes CLR (Common Language Runtime) stored procedures. 
+In order to install tSQLt, CLRs must be enabled in SQL Server. The 
+SetClrEnabled.sql file has the command which enables CLRs. If CLRs are not 
+already enabled, this command must be executed before installing tSQLt.
+
+NEW FEATURES:
+1. A new procedure tSQLt.RunAll, executes all test classes created with the 
+tSQLt.NewTestClass procedure.
+
+2. Added procedure tSQLt.AssertResultSetsHaveSameMetaData which allows the 
+meta data of two result sets to be compared. This compares several properties 
+of each column of the result set including the column name, data type, length, 
+precision, scale and other properties.
+
+3. Added procedure tSQLt.ResultSetFilter which returns a single result set from
+a statement which produces multiple result sets. For example, you want to test 
+a stored procedure which executes several select statements. You can now use
+ResultSetFilter to choose which result set to emit, and therefore you can 
+capture that result set into a table for use with tSQLt.AssertEqualsTable.
+
+4. The results of running tests can now be output in an XML format. After 
+calling one of the tSQLt.Run... procedures to execute your test cases, you 
+can call tSQLt.XmlResultFormatter to display the results in XML. The format is 
+compatible with CruiseControl and can be merged into a build log the same way 
+that a JUnit test report is merged.
