@@ -1,6 +1,6 @@
 Test Automation .NET
 ====================
-Materiales del curso "Automate Testing .NET"
+Materiales del curso "Test Automation .NET"
 
 - Descripción completa: [http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/](http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/ "Automate Testing .NET")
 - Slides: [http://www.slideshare.net/snahider/test-automation-net/](http://www.slideshare.net/snahider/test-automation-net/ "Test Automation .NET")
