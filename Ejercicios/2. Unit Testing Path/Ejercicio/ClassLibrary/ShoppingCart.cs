@@ -5,12 +5,12 @@
 
     public class ShoppingCart
     {
+        private readonly List<ShoppingCartItem> items;
+
         public ShoppingCart()
         {
-            Items = new List<ShoppingCartItem>();
+            this.items = new List<ShoppingCartItem>();
         }
-
-        public List<ShoppingCartItem> Items { get; set; }
 
         public decimal TaxAmount { get; set; }
 
@@ -18,7 +18,15 @@
         {
             get
             {
-                return this.Items.Sum(x => x.Quantity);
+                return this.items.Count;
+            }
+        }
+
+        public int TotalProducts
+        {
+            get
+            {
+                return this.items.Sum(x => x.Quantity);
             }
         }
 
@@ -26,7 +34,7 @@
         {
             get
             {
-                return Items.Sum(x => x.LineTotal);
+                return this.items.Sum(x => x.LineTotal);
             }
         }
 
@@ -41,23 +49,23 @@
         public void AddItem(Product product, int quantity)
         {
             var item = new ShoppingCartItem(product, quantity);
-            Items.Add(item);
+            this.items.Add(item);
         }
 
         public void RemoveItem(string sku)
         {
             var itemToRemove = FindItem(sku);
-            Items.Remove(itemToRemove);
+            this.items.Remove(itemToRemove);
         }
 
         public void ClearItems()
         {
-            this.Items.Clear();
+            this.items.Clear();
         }
 
         public ShoppingCartItem FindItem(string sku)
         {
-            return (from items in Items
+            return (from items in this.items
                     where items.Product.SKU == sku
                     select items).SingleOrDefault();
 

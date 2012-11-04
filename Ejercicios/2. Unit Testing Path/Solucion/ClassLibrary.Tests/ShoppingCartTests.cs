@@ -16,12 +16,21 @@
         }
 
         [TestMethod]
-        public void AddItem_2DifferentProducts_2ProductsAdded()
+        public void AddItem_2DifferentItems_2ItemsAdded()
         {
             this.cart.AddItem(new Product("SKU1"), 1);
             this.cart.AddItem(new Product("SKU2"), 1);
 
             Assert.AreEqual(2, cart.TotalItems);
+        }
+
+        [TestMethod]
+        public void AddItem_2DifferentItemsWith2ProductsEach_4ProductsAdded()
+        {
+            this.cart.AddItem(new Product("SKU1"), 2);
+            this.cart.AddItem(new Product("SKU2"), 2);
+
+            Assert.AreEqual(4, cart.TotalProducts);
         }
 
         [TestMethod]
@@ -51,7 +60,7 @@
 
             cart.RemoveItem("SKU");
 
-            Assert.AreEqual(0, cart.Items.Count);
+            Assert.AreEqual(0, cart.TotalItems);
         }
 
         [TestMethod]
@@ -62,7 +71,7 @@
 
             cart.ClearItems();
 
-            Assert.AreEqual(0, cart.Items.Count);
+            Assert.AreEqual(0, cart.TotalItems);
         }
 
         [TestMethod]
@@ -97,7 +106,7 @@
             this.cart.AddItem(new Product("SKU"), 1);
             this.cart.AddItem(new Product("SKU"), 2);
 
-            Assert.AreEqual(2, cart.TotalItems);
+            Assert.AreEqual(2, cart.TotalProducts);
         }
 
         [TestMethod]
@@ -106,7 +115,7 @@
             this.cart.AddItem(new Product("SKU"), 0);
             this.cart.AddItem(new Product("SKU2"), -1);
 
-            Assert.AreEqual(0, cart.Items.Count);
+            Assert.AreEqual(0, cart.TotalItems);
         }
 
         [TestMethod]
@@ -114,8 +123,6 @@
         public void RemoveItem_ItemDoesNoExist_ThrowsException()
         {
             this.cart.RemoveItem("SKU");
-
-            Assert.AreEqual(0, cart.TotalItems);
         }
 
     }
