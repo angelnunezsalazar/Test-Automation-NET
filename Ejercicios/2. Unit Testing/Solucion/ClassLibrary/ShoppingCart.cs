@@ -52,7 +52,10 @@
             var item = this.FindItem(product.SKU);
             if (item != null)
             {
-                item.AdjustQuantity(quantity);
+                if (quantity == 0)
+                    this.items.Remove(item);
+                else
+                    item.AdjustQuantity(quantity);
             }
             else
             {
@@ -82,7 +85,6 @@
             return (from items in this.items
                     where items.Product.SKU == sku
                     select items).SingleOrDefault();
-
         }
     }
 }

@@ -18,7 +18,7 @@
         }
 
         [TestMethod]
-        public void IsEmpty_NewStack_ReturnsTrue()
+        public void IsEmptyWhenNew()//Está vacio si no tiene elementos
         {
             this.stack = new Stack();
 
@@ -28,7 +28,7 @@
         }
 
         [TestMethod]
-        public void IsEmpty_WithOneElement_ReturnsFalse()
+        public void NotIsEmptyWhenPushingAnItem()//No está vacio si colocamos elemento
         {
             stack.Push(1);
 
@@ -38,30 +38,18 @@
         }
 
         [TestMethod]
-        public void IsEmpty_PushAndPopOneElement_ReturnsFalse()
+        public void RemovesTheItemWhenPopping()//Elimina un elemento de la lista al obtenerlo
         {
             stack.Push(1);
+            
             stack.Pop();
 
             bool isEmpty = stack.IsEmpty;
-
             Assert.IsTrue(isEmpty);
         }
 
         [TestMethod]
-        public void IsEmpty_PushTwoAndPopOne_ReturnsFalse()
-        {
-            stack.Push(1);
-            stack.Push(2);
-            stack.Pop();
-
-            bool isEmpty = stack.IsEmpty;
-
-            Assert.IsFalse(isEmpty);
-        }
-
-        [TestMethod]
-        public void Pop_WithOneElement_ReturnsTheElement()
+        public void PopsTheSameItemThatWasPushed()//Retorna el mismo elemento que se ha ingresado
         {
             stack.Push(1);
 
@@ -71,30 +59,19 @@
         }
 
         [TestMethod]
-        public void Pop_WithTwoElements_ReturnsTheSecondElementPushed()
+        public void TheFirstItemPoppedIsTheLastItemPushed()//El primer elemento obtenido es último elemento que ha sido ingresado
         {
             stack.Push(1);
             stack.Push(2);
+            stack.Push(3);
 
-            int element = stack.Pop();
-
-            Assert.AreEqual(2, element);
+            Assert.AreEqual(3, stack.Pop());
+            Assert.AreEqual(2, stack.Pop());
+            Assert.AreEqual(1, stack.Pop());
         }
 
         [TestMethod]
-        public void Pop_PushTwoPopTwo_ReturnsTheFirstElementPushed()
-        {
-            stack.Push(1);
-            stack.Push(2);
-            stack.Pop();
-
-            int element = stack.Pop();
-
-            Assert.AreEqual(1, element);
-        }
-
-        [TestMethod]
-        public void Pop_WithNoItems_ThrowsException()
+        public void ThrowsExceptionWhenPoppingAnItemItDoesntHold()//Lanza una excepción al obtener un elemento que no ha sido ingresado
         {
             try
             {

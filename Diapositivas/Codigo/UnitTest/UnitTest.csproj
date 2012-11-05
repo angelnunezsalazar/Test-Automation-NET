@@ -45,14 +45,16 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlcanceDeUnaPruebaUnitaria.cs" />
     <Compile Include="Asserts.cs" />
     <Compile Include="CodigoLogico.cs" />
     <Compile Include="CreandoUnNuevoTest.cs" />
-    <Compile Include="EstructuraDeUnaPrueba.cs" />
+    <Compile Include="PruebasGrandes.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetUpTeardown.cs" />
     <Compile Include="SetUpTeardownFixture.cs" />
+    <Compile Include="Shared\Stack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

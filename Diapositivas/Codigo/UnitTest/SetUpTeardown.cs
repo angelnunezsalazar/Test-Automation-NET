@@ -14,7 +14,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TransferTest(){
+        public void LoginTest(){
             var isValid=Login("user", "pass");
             Assert.IsTrue(isValid);
         }

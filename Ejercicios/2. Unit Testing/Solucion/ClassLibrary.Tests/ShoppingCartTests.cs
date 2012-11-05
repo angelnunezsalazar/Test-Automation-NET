@@ -16,12 +16,42 @@
         }
 
         [TestMethod]
-        public void AddItem_2DifferentItems_2ItemsAdded()
+        //AddItem_2DifferentItems_2ItemsAdded
+        public void AddsItemsToTheCart()
         {
             this.cart.AddItem(new Product("SKU1"), 1);
             this.cart.AddItem(new Product("SKU2"), 1);
 
             Assert.AreEqual(2, cart.TotalItems);
+        }
+
+        [TestMethod]
+        //AddItem_NewProductAndZeroQuantity_NothingAdded
+        public void DoesntAddAnItemWhenQuantityZero()
+        {
+            this.cart.AddItem(new Product("SKU"), 0);
+
+            Assert.AreEqual(0, cart.TotalItems);
+        }
+
+        [TestMethod]
+        //AddItem_2SameProducts_1ProductAddedWithQuantityAdjusted()
+        public void AdjustsTheItemQuantityWhenAddingAnItemThatAlreadyExists()
+        {
+            this.cart.AddItem(new Product("SKU"), 1);
+            this.cart.AddItem(new Product("SKU"), 2);
+
+            Assert.AreEqual(2, cart.TotalProducts);
+        }
+
+        [TestMethod]
+        //AddItem_ProductAlreadyAddedAndZeroQuantity_ProductRemoved
+        public void RemovesAnItemWhenAddingAndItemWithQuantityZero()
+        {
+            this.cart.AddItem(new Product("SKU"), 1);
+            this.cart.AddItem(new Product("SKU"), 0);
+
+            Assert.AreEqual(0, cart.TotalItems);
         }
 
         [TestMethod]
@@ -87,7 +117,6 @@
             Assert.AreEqual(20, cart.SubTotal);
         }
 
-        /* TEST FIRST PROGRAMMING */
         [TestMethod]
         public void Total_SubTotal90AndTax10_Returns100()
         {
@@ -98,24 +127,6 @@
             cart.TaxAmount = 10;
 
             Assert.AreEqual(100, cart.Total);
-        }
-
-        [TestMethod]
-        public void AddItem_2SameProducts_1ProductAddedWithQuantityAdjusted()
-        {
-            this.cart.AddItem(new Product("SKU"), 1);
-            this.cart.AddItem(new Product("SKU"), 2);
-
-            Assert.AreEqual(2, cart.TotalProducts);
-        }
-
-        [TestMethod]
-        public void AddItem_NegativeOrZeroQuantity_NothingAdded()
-        {
-            this.cart.AddItem(new Product("SKU"), 0);
-            this.cart.AddItem(new Product("SKU2"), -1);
-
-            Assert.AreEqual(0, cart.TotalItems);
         }
 
         [TestMethod]
