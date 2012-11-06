@@ -2,15 +2,15 @@
 {
     using System;
     using System.Configuration;
-    using System.Data.SQLite;
+    using System.Data.Sql;
 
     public class DataAccess
     {
         public decimal GetShippingCosts(Order order)
         {
-            using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SQLiteCommand("select Cost from Shipping where Country=@Country", conn);
+                var command = new SqlCommand("select Cost from Shipping where Country=@Country", conn);
                 command.Parameters.AddWithValue("Country", order.Country);
                 conn.Open();
 
@@ -24,9 +24,9 @@
 
         public void SaveOrder(Order order)
         {
-            using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SQLiteCommand("insert into 'Order' values(@Id, @Country, @ItemTotal, @Total)", conn);
+                var command = new SqlCommand("insert into 'Order' values(@Id, @Country, @ItemTotal, @Total)", conn);
                 command.Parameters.AddWithValue("Id", order.Id);
                 command.Parameters.AddWithValue("Country", order.Country);
                 command.Parameters.AddWithValue("ItemTotal", order.ItemTotal);
@@ -41,9 +41,9 @@
 
         public Order GetOrder(int id)
         {
-            using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SQLiteCommand("select Id, Country, ItemTotal, Total from 'Order' where Id=@Id", conn);
+                var command = new SqlCommand("select Id, Country, ItemTotal, Total from 'Order' where Id=@Id", conn);
                 command.Parameters.AddWithValue("Id", id);
                 conn.Open();
 
