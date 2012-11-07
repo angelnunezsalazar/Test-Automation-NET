@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 namespace SeleniumTests
 {
     [TestFixture]
-    public class TranslateWord
+    public class InsertSymbol
     {
         private IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -39,22 +39,14 @@ namespace SeleniumTests
         }
         
         [Test]
-        public void TheTranslateWordTest()
+        public void TheInsertSymbolTest()
         {
             driver.Navigate().GoToUrl(baseURL + "/");
-            new SelectElement(driver.FindElement(By.Id("src"))).SelectByText("Spanish");
             driver.FindElement(By.Id("query")).Click();
-            driver.FindElement(By.Id("query")).Clear();
-            driver.FindElement(By.Id("query")).SendKeys("hola mundo");
-            driver.FindElement(By.CssSelector("button.trans_image")).Click();
-            try
-            {
-                Assert.AreEqual("Hello World", driver.FindElement(By.CssSelector("div.translateTxt")).Text);
-            }
-            catch (AssertionException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
+            driver.FindElement(By.LinkText("Symbols & accents")).Click();
+            driver.FindElement(By.XPath("//div[@id='tooltip_keyboard']/p[2]/button[32]")).Click();
+            driver.FindElement(By.CssSelector("span.ui-icon.ui-icon-closethick")).Click();
+            Assert.AreEqual("ñ", driver.FindElement(By.Id("query")).GetAttribute("value"));
         }
         private bool IsElementPresent(By by)
         {
