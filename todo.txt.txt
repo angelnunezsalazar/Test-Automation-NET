@@ -1,0 +1,2 @@
+Mejora: Colocar mini imágenes de web pages en el slide "Page Object Pattern"
+Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utilizar diferentes ambientes(testing,producción)

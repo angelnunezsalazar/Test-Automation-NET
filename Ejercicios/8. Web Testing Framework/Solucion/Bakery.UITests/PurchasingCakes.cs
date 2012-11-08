@@ -20,13 +20,13 @@
         [AssemblyInitialize]
         public static void SetupOnlyOnce(TestContext testContext)
         {
-            driver = new ChromeDriver(ConfigurationManager.AppSettings["seleniumDriver"]);
+            driver = new ChromeDriver();
         }
 
         [TestCleanup]
         public void Teardown()
         {
-            DatabaseCleaner.Clean("Products");
+            Database.CleanTable("Products");
         }
 
         [AssemblyCleanup]
@@ -38,7 +38,7 @@
         [TestMethod]
         public void SeeProductDetailsWhenPlacingOrder()
         {
-            DataFactory.Load(new Product
+            Database.LoadData(new Product
                 {
                     Name = "Apple Cake",
                     Description = "Default Descripcion",
