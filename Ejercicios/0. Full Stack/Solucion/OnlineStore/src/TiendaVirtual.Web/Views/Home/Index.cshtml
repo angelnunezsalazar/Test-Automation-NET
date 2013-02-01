@@ -1,0 +1,22 @@
+﻿@using TiendaVirtual.Web.Pagination
+@model PagedList<TiendaVirtual.Domain.Producto>
+@{
+    ViewBag.Title = "Productos";
+}
+<h2 class="center_title_bar">Productos</h2>
+
+@foreach (var producto in Model)
+{ 
+    @Html.Partial("_Producto",producto)
+}
+<div id="pagination">
+    @Html.PageLinks(Model, i => Url.Action("index", new { pagina = i, categoria = ViewContext.RouteData.Values["categoria"] }))
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".addtocart").click(function () {
+            $(this).closest('form').submit();
+        });
+    });
+</script>

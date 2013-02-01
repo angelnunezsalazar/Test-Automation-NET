@@ -5,7 +5,6 @@
 
     public class EmployeeEFInitializer : DropCreateDatabaseAlways<AppDbContext>
     {
-        
         protected override void Seed(AppDbContext context)
         {
             Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));

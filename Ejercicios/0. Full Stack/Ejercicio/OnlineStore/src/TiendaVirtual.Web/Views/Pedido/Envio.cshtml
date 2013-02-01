@@ -1,0 +1,37 @@
+﻿@model TiendaVirtual.Domain.DireccionEnvio
+@{
+    ViewBag.Title = "Detalles de Envío";
+}
+
+<h2 class="center_title_bar">
+    Detalles de Envío</h2>
+<div class="prod_box_big">
+    <div class="center_prod_box_big">
+        @using (Html.BeginForm("Envio", "Pedido", FormMethod.Post, new { @class = "shipping_form" }))
+        {
+            <div class="form_row">
+                @Html.LabelFor(x => x.Calle)
+                @Html.EditorFor(x => x.Calle)
+            </div>
+            <div class="form_row">
+                @Html.LabelFor(x => x.Ciudad)
+                @Html.EditorFor(x => x.Ciudad)
+            </div>
+            <div class="form_row">
+                @Html.LabelFor(x => x.Pais)
+                @Html.EditorFor(x => x.Pais)
+            </div>
+            <div class="form_row">
+                @Html.LabelFor(x => x.VelocidadEnvio, "Velocidad de Envio")
+                <ul>
+                    <li>@Html.RadioButtonFor(x => x.VelocidadEnvio, 1) Estándar (10 a 20 días)</li>
+                    <li>@Html.RadioButtonFor(x => x.VelocidadEnvio, 2) Rápido (3 a 9 días)</li>
+                    <li>@Html.RadioButtonFor(x => x.VelocidadEnvio, 3) Urgente (1 a 2 días)</li>
+                </ul>
+            </div>
+            <div class="form_row">
+                <a href="@Url.Action("Confirmacion","Pedido")" class="prod_details">Continuar</a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@model TiendaVirtual.Domain.CarroCompras
+@{
+    ViewBag.Title = "Carro de Compras";
+}
+<h2 class="center_title_bar">
+    Carro de Compras</h2>
+
+<table class="cart_list">
+    <thead>
+        <tr>
+            <th class="product_name">
+                Producto
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Subtotal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var linea in Model.Detalle)
+        {
+            <tr>
+                <td class="product_name">
+                    @linea.Producto.Nombre
+                </td>
+                <td class="quantity">
+                    @using (Html.BeginForm("actualizar","carrocompras"))
+                    {
+                        @Html.Hidden("Id", linea.Producto.Id.ToString())
+                        @Html.TextBox("cantidad", @linea.Cantidad)
+                        @Html.Hidden("regresarUrl", Request.Url.PathAndQuery)
+                        <a href="#">Actualizar</a>
+                    }
+                    @using (Html.BeginForm("eliminar", "carrocompras"))
+                    {
+                        @Html.Hidden("Id", linea.Producto.Id.ToString())
+                        @Html.Hidden("regresarUrl", Request.Url.PathAndQuery)
+                        <a href="#">Eliminar</a>
+                    }
+                </td>
+                <td>
+                    @linea.Producto.Precio.ToString("c")
+                </td>
+                <td>
+                    @linea.SubTotal.ToString("c")
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="total">
+                Total:
+            </td>
+            <td>
+                @this.Model.Total.ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<a href="@ViewBag.RegresarUrl" class="return_url">Regresar</a>
+
+<a href="@Url.Action("Envio","Pedido")" class="return_url">Tramitar Pedido</a>
+
+<script type="text/javascript">
+    $(function () {
+        $('.cart_list tbody tr:even').addClass('even');
+        $('.cart_list tbody tr:odd').addClass('odd');
+        $("td.quantity a").click(function () {
+            $(this).closest('form').submit();
+        });
+    });
+</script>

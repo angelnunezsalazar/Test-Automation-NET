@@ -1,0 +1,22 @@
+﻿@model TiendaVirtual.Domain.Producto
+<div class="prod_box">
+    <div class="center_prod_box">
+        <h4 class="product_title">@Model.Nombre</h4>
+        <span class="price">Precio: @Model.Precio$</span>
+        <div class="product_img">
+            @if (Model.Imagen.Ruta != null)
+            {
+                <img src="@Url.Action("imagen", "home", new { id = @Model.Id })" 
+                        alt="@Model.Nombre" title="@Model.Nombre" border="0" />
+            }
+        </div>
+    </div>
+    <div class="button_prod_box">
+        @using (Html.BeginForm("agregar", "carrocompras"))
+        {
+            @Html.HiddenFor(x => x.Id)
+            @Html.Hidden("regresarUrl", Request.Url.PathAndQuery)
+            <a href="#" class="addtocart">Añadir a Carro</a> 
+        }
+    </div>
+</div>

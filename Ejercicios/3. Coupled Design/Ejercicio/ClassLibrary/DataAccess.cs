@@ -2,23 +2,23 @@
 {
     using System;
     using System.Configuration;
-    using System.Data.Sql;
+    using System.Data.SqlClient;
 
     public class DataAccess
     {
-        public decimal GetShippingCosts(Order order)
+        public int GetPromotionalDiscount(string coupon)
         {
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SqlCommand("select Cost from Shipping where Country=@Country", conn);
-                command.Parameters.AddWithValue("Country", order.Country);
+                var command = new SqlCommand("select discount from CouponDiscount where coupon=@Coupon", conn);
+                command.Parameters.AddWithValue("Coupon", coupon);
                 conn.Open();
 
                 object value = command.ExecuteScalar();
 
                 if (value == null)
                     throw new Exception("No shipping cost found");
-                return (decimal)value;
+                return (int)value;
             }
         }
 
@@ -26,9 +26,9 @@
         {
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SqlCommand("insert into 'Order' values(@Id, @Country, @ItemTotal, @Total)", conn);
+                var command = new SqlCommand("insert into 'Order' values(@Id, @CouponCode, @ItemTotal, @Total)", conn);
                 command.Parameters.AddWithValue("Id", order.Id);
-                command.Parameters.AddWithValue("Country", order.Country);
+                command.Parameters.AddWithValue("CouponCode", order.CouponCode);
                 command.Parameters.AddWithValue("ItemTotal", order.ItemTotal);
                 command.Parameters.AddWithValue("Total", order.Total);
                 conn.Open();
@@ -43,7 +43,7 @@
         {
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString))
             {
-                var command = new SqlCommand("select Id, Country, ItemTotal, Total from 'Order' where Id=@Id", conn);
+                var command = new SqlCommand("select Id, CouponCode, ItemTotal, Total from 'Order' where Id=@Id", conn);
                 command.Parameters.AddWithValue("Id", id);
                 conn.Open();
 
@@ -54,9 +54,9 @@
                     return new Order
                         {
                             Id = (int)reader.GetValue(0),
-                            Country = (string)reader.GetValue(1),
+                            CouponCode = (string)reader.GetValue(1),
                             ItemTotal = (decimal)reader.GetValue(2),
-                            Total   =(decimal)reader.GetValue(3)
+                            Total = (decimal)reader.GetValue(3)
                         };
                 }
                 return null;

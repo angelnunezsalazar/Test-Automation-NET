@@ -8,3 +8,6 @@ TestResults
 # VS Plugin Files
 ReSharper*
 TeamCity*
+
+# Directorios Temporales
+Otros

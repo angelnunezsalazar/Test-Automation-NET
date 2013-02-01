@@ -1,0 +1,46 @@
+﻿@model TiendaVirtual.Domain.Producto
+
+@{
+    ViewBag.Title = "Crear un Producto";
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Precio)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Precio)
+        @Html.ValidationMessageFor(model => model.Precio)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.CategoriaId)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("CategoriaId")
+        @Html.ValidationMessageFor(model => model.CategoriaId)
+    </div>
+    
+    <p>
+        <input type="submit" value="Guardar" />
+    </p>
+}
+    
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
+

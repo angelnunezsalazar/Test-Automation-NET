@@ -1,2 +1,9 @@
 Mejora: Colocar mini imágenes de web pages en el slide "Page Object Pattern"
 Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utilizar diferentes ambientes(testing,producción)
+Mejora: Que no es un Unit Test (pag 298 Art of Agile)
+Mejora: Explicar mejor como dejar siempre en el mismo estado el test, independencia, alteatorios.
+
+Nuevo Tema:Testing Approaches
+» Keyword Driven Testing
+» Test Driven Development
+» Data Driven Testing

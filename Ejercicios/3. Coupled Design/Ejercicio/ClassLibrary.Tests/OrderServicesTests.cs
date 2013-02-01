@@ -8,9 +8,9 @@
     public class OrderServicesTests
     {
         [TestMethod]
-        public void CalculateTotal_OrderFromUS_FreeShipping()
+        public void CalculateTotal_WithoutCoupon_ReturnLineItemTotal()
         {
-			Order order = new Order { Country = "US", ItemTotal = 100 };
+            Order order = new Order { ItemTotal = 100 };
             OrderServices orderServices = new OrderServices();
 
             var total = orderServices.CalculateTotal(order);
@@ -19,9 +19,9 @@
         }
 
         [TestMethod]
-        public void CalculateTotal_OrderOutsideUS_ShippingCostIsAdded()
+        public void CalculateTotal_WithCoupon_ReturnLineItemWithDiscount()
         {
-			Order order = new Order { Country = "PER", ItemTotal = 100 };
+            Order order = new Order { CouponCode = "HAPPY", ItemTotal = 100 };
             OrderServices orderServices = new OrderServices();
 
             var total = orderServices.CalculateTotal(order);
@@ -32,7 +32,7 @@
         [TestMethod]
         public void Save_ValidOrder_TheOrderIsPersisted()
         {
-			Order order = new Order { Id = 1, Country = "PER", ItemTotal = 100, Total = 110 };
+            Order order = new Order { Id = 1, ItemTotal = 100, Total = 110 };
             OrderServices orderProcessor = new OrderServices();
 
             orderProcessor.Save(order);

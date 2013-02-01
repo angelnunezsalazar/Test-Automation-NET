@@ -12,14 +12,14 @@
         public decimal CalculateTotal(Order order)
         {
             decimal itemTotal = order.ItemTotal;
-            decimal shippingCosts = 0;
+            decimal discountPercentage = 0;
 
-            if (order.Country != "US")
+            if (!string.IsNullOrEmpty(order.CouponCode))
             {
-                shippingCosts = dataAccess.GetShippingCosts(order);
+                discountPercentage = this.dataAccess.GetPromotionalDiscount(order.CouponCode);
             }
 
-            return itemTotal + shippingCosts;
+            return itemTotal - itemTotal * discountPercentage / 100;
         }
 
         public Order GetOrder(int id)
@@ -37,7 +37,7 @@
 
         private bool IsValid(Order order)
         {
-            return order.Id > 0 && order.Country != null && order.ItemTotal > 0 && order.Total > 0;
+            return order.Id > 0 && order.ItemTotal > 0 && order.Total > 0;
         }
     }
 }

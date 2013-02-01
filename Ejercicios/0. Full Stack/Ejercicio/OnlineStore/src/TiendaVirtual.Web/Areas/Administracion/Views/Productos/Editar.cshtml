@@ -1,0 +1,49 @@
+﻿@model TiendaVirtual.Web.Areas.Administracion.Models.EditarProductoViewModel
+@{
+    ViewBag.Title = "Editar Producto";
+}
+<h1>
+    @ViewBag.Title
+</h1>
+
+@using (@Html.BeginForm("Editar", "Productos", FormMethod.Post
+    , new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+    @Html.HiddenFor(model => model.Id)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Precio)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Precio)
+        @Html.ValidationMessageFor(model => model.Precio)
+    </div>
+    <div class="editor-label">
+        @Html.Label("CategoriaId")
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("CategoriaId", Model.Categorias)
+    </div>
+    <div class="editor-field">
+        @if (Model.TieneImagen)
+        { 
+            <img src="@Url.Action("imagen", "home", new {area="", id = @Model.Id })" alt="@Model.Nombre" />
+        }
+        Cargar nueva imagen:
+        <input type="file" name="archivo" value="Imagen" />
+    </div>
+    <p>
+        <input type="submit" value="Guardar" />
+    </p>
+}
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>

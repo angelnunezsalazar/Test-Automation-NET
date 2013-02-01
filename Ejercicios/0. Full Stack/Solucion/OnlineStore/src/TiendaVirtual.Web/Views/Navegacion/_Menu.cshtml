@@ -1,0 +1,17 @@
+﻿@model List<TiendaVirtual.Domain.Categoria>
+
+@{
+    Layout = null;
+}
+
+<div class="title_box">
+    Categorias</div>
+<ul class="left_menu">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li class="@(i % 2 == 1 ? "even" : "odd")">
+            @Html.ActionLink(Model[i].Nombre, "index","home", new { categoria = Model[i].Nombre }, null)
+        </li>
+    }
+</ul>
+

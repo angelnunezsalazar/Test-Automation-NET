@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="IDataAccess.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

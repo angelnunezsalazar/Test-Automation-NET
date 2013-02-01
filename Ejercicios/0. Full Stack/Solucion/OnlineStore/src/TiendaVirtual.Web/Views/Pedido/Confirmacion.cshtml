@@ -1,0 +1,63 @@
+﻿@model TiendaVirtual.Domain.CarroCompras
+@{
+    ViewBag.Title = "Confirmación";
+}
+<h2 class="center_title_bar">
+    Confirmación del Pedido</h2>
+    
+<table class="cart_list">
+    <thead>
+        <tr>
+            <th class="product_name">
+                Producto
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Subtotal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var linea in Model.Detalle)
+        {
+            <tr>
+                <td class="product_name">
+                    @linea.Producto.Nombre
+                </td>
+                <td class="quantity">
+                    @linea.Cantidad
+                </td>
+                <td>
+                    @linea.Producto.Precio.ToString("c")
+                </td>
+                <td>
+                    @linea.SubTotal.ToString("c")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="prod_box_big">
+    <div class="confirmation_box">
+        <div class="row">
+            <span class="title">Productos:</span>
+            <span>S/. @Html.DisplayFor(x => x.Total)</span>
+        </div>
+        <div class="row">
+            <span class="title">Envio:</span>
+            <span>S/. @Html.DisplayFor(x => x.Total)</span>
+        </div>
+        <div class="row total">
+            <span class="title">Total:</span>
+            <span>S/. @Html.DisplayFor(x => x.Total)</span>
+        </div>
+    </div>
+</div>
+
+<a href="@Url.Action("Comprar")" class="return_url">Finalizar Pedido</a>
