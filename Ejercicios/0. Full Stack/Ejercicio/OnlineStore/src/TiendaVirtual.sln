@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9C13689
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.UnitTests", "TiendaVirtual.UnitTests\TiendaVirtual.UnitTests.csproj", "{4EBE022F-5EB4-434F-AD84-09EC715083B4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{9C433F51-3F93-4530-A7C4-5A1584BC2373}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Items", "_Items", "{9C433F51-3F93-4530-A7C4-5A1584BC2373}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
 	EndProjectSection

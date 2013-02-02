@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9C13689
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.UnitTests", "TiendaVirtual.UnitTests\TiendaVirtual.UnitTests.csproj", "{96E3AF1D-A66A-49A9-8FC7-D36FCD9CB35E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.IntegrationTests", "TiendaVirtual.IntegrationTests\TiendaVirtual.IntegrationTests.csproj", "{C3F5E853-2718-4C47-9655-70E52BAF48D5}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = TiendaVirtual.vsmdi
@@ -85,6 +87,16 @@ Global
 		{96E3AF1D-A66A-49A9-8FC7-D36FCD9CB35E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{96E3AF1D-A66A-49A9-8FC7-D36FCD9CB35E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{96E3AF1D-A66A-49A9-8FC7-D36FCD9CB35E}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +107,6 @@ Global
 		{74719B86-2DA0-4D33-A094-8874F913ACD0} = {20616594-643D-402E-A611-1DD1B0F6EB16}
 		{546BD2F1-4B33-454E-AE9F-AC255ACA4E27} = {20616594-643D-402E-A611-1DD1B0F6EB16}
 		{96E3AF1D-A66A-49A9-8FC7-D36FCD9CB35E} = {A9C13689-FAC5-4A18-AE81-2CBA87247477}
+		{C3F5E853-2718-4C47-9655-70E52BAF48D5} = {A9C13689-FAC5-4A18-AE81-2CBA87247477}
 	EndGlobalSection
 EndGlobal

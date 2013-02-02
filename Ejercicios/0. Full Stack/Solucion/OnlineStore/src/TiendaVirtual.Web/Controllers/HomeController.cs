@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace TiendaVirtual.Web.Controllers
 {
@@ -11,24 +10,27 @@ namespace TiendaVirtual.Web.Controllers
 
     public class HomeController : Controller
     {
-        DatabaseContext context = new DatabaseContext();
+        private ProductoDAO productoDAO;
 
         const int tamanoPagina = 2;
 
+        public HomeController()
+        {
+            DatabaseContext context=new DatabaseContext();
+            this.productoDAO = new ProductoDAO(context);
+        }
+
         public ActionResult Index(string categoria, int pagina)
         {
-            var query = categoria == null
-                ? context.Productos.OrderBy(x => x.Nombre)
-                : context.Productos.OrderBy(x => x.Nombre).Where(x => x.Categoria.Nombre == categoria);
+            var productos = productoDAO.Buscar(categoria);
+            var pagedList = productos.ToPagedList(pagina, tamanoPagina);
 
-            var productos = query.ToPagedList(pagina, tamanoPagina);
-
-            return View(productos);
+            return View(pagedList);
         }
 
         public ActionResult Imagen(int id)
         {
-            var producto = context.Productos.Find(id);
+            var producto = productoDAO.Obtener(id);
             string path = Path.Combine(ConfigurationManager.AppSettings["DirectorioProductos"],
                                        producto.Imagen.Ruta);
             return File(path, producto.Imagen.Tipo);

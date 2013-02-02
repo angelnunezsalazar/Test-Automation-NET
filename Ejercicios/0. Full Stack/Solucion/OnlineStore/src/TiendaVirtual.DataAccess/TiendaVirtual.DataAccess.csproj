@@ -49,6 +49,7 @@
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="CostoEnvioDAO.cs" />
     <Compile Include="AlmacenDAO.cs" />
+    <Compile Include="ProductoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,39 +27,5 @@
             var costoEnvioDAO = new CostoEnvioDAO();
             costoEnvioDAO.Actualizar(pais, costo);
         }
-
-        public bool IsAdmin()
-        {
-            return GetUserManager()
-                    .GetUser(1)
-                    .Profile()
-                    .IsInRole(Roles.Admin);
-        }
-
-        public enum Roles
-        {
-            Admin
-        }
-
-        private bool IsInRole(object admin)
-        {
-            throw new NotImplementedException();
-        }
-
-        private CostoEnvioService Profile()
-        {
-            throw new NotImplementedException();
-        }
-
-        private CostoEnvioService GetUser(int i)
-        {
-            throw new NotImplementedException();
-        }
-
-        private CostoEnvioService GetUserManager()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
