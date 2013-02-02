@@ -5,6 +5,18 @@ Materiales del curso "Test Automation .NET"
 - Descripción completa: [http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/](http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/ "Automate Testing .NET")
 - Slides: [http://www.slideshare.net/snahider/test-automation-net/](http://www.slideshare.net/snahider/test-automation-net/ "Test Automation .NET")
 
+
+Release History
+---------------
+3.0 (beta) - (02/02/2013) 
+* Ejercicio "Full Stack": Aplicación de una Tienda Virtual completa que permite la aplicación de todos los tipos de tests.
+* Gráfico "¿Cuándo utilizar cada tipo de test?"
+* ORM Testing
+
+2.0 - (07/09/2012)
+* División de Slides
+* Page Object Pattern
+
 License
 -------
 Copyright (c) 2012 "Snahider" Angel Nuñez Salazar

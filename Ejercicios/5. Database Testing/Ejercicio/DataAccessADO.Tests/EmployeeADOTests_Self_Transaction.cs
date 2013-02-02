@@ -17,14 +17,6 @@ namespace DataAccessADO.Tests
         }
 
         [TestMethod]
-        public void Find_WithoutFilters_ReturnAllEmployees()
-        {
-            List<Employee> employees = this.employeeADO.Find(null, null, null);
-
-            Assert.AreEqual(3, employees.Count);
-        }
-
-        [TestMethod]
         public void Find_WithLastNameFilter_ReturnTheEmployeesWithTheExactLastName()
         {
             String lastName = "Pacheco";

@@ -24,6 +24,8 @@ namespace DataAccessADO.Tests
             database = new SqlDbUnitTest(ConfigurationManager.ConnectionStrings["DB"].ConnectionString);
             database.ReadXmlSchema(@"EmployeeADODatabase.xsd");
             database.ReadXml(@"EmployeeADOTestData.xml");
+
+            database.PerformDbOperation(DbOperationFlag.DeleteAll);
         }
 
         [TestInitialize]
@@ -31,6 +33,12 @@ namespace DataAccessADO.Tests
         {
             this.employeeADO = new EmployeeADO();
             database.PerformDbOperation(DbOperationFlag.CleanInsertIdentity);
+        }
+
+        [TestCleanup]
+        public void CleanUpDatabase()
+        {
+            database.PerformDbOperation(DbOperationFlag.DeleteAll);
         }
 
         [TestMethod]
@@ -97,12 +105,6 @@ namespace DataAccessADO.Tests
 
             Employee employeeDeleted = this.employeeADO.Get(1);
             Assert.IsNull(employeeDeleted);
-        }
-
-        [ClassCleanup]
-        public static void CleanUpDatabae()
-        {
-            database.PerformDbOperation(DbOperationFlag.DeleteAll);
         }
     }
 }

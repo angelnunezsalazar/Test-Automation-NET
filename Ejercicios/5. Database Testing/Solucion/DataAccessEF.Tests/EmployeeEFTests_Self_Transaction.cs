@@ -8,12 +8,14 @@ namespace DataAccessEF.Tests
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class EmployeeEFTests
+    public class EmployeeEFTests_Self_Transaction
     {
         private AppDbContext context;
         private EmployeeEF employeeEF;
 
         private TransactionScope transactionScope;
+
+        private Employee employeeLoaded;
 
         //[ClassInitialize]
         //public static void InitializeDatabase(TestContext context)
@@ -31,6 +33,16 @@ namespace DataAccessEF.Tests
             this.context = new AppDbContext();
             this.employeeEF = new EmployeeEF(context);
             transactionScope = new TransactionScope();
+
+            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            LoadData(employee1);
+            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            LoadData(employee2);
+            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            LoadData(employee3);
+            FlushChanges();
+
+            employeeLoaded = employee1;
         }
 
         [TestCleanup]
@@ -42,11 +54,11 @@ namespace DataAccessEF.Tests
         [TestMethod]
         public void Find_WithLastNameFilter_ReturnTheEmployeesWithTheExactLastName()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            FlushChanges();
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //FlushChanges();
 
             string lastName = "Pacheco";
 
@@ -58,13 +70,13 @@ namespace DataAccessEF.Tests
         [TestMethod]
         public void Find_WithHireDateFilters_ReturnTheEmployeesBetweenHireDates()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
-            LoadData(employee3);
-            FlushChanges();
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            //LoadData(employee3);
+            //FlushChanges();
 
             DateTime startHireDate = new DateTime(2010, 12, 29);
             DateTime endHireDate = new DateTime(2010, 12, 30);
@@ -77,13 +89,13 @@ namespace DataAccessEF.Tests
         [TestMethod]
         public void Find_WithAllFilters_ReturnTheEmployeesWithTheExactLastNameAndBetweenTheHiredDates()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
-            LoadData(employee3);
-            FlushChanges();
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            //LoadData(employee3);
+            //FlushChanges();
 
             String lastName = "Pacheco";
             DateTime startHireDate = new DateTime(2010, 12, 29);
@@ -109,25 +121,21 @@ namespace DataAccessEF.Tests
         [TestMethod]
         public void Delete_TheEmployeeIsDeleted()
         {
-            Employee employee = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee);
+            employeeEF.Delete(employeeLoaded.Id);
             FlushChanges();
 
-            employeeEF.Delete(employee.Id);
-            FlushChanges();
-
-            Employee employeeDeleted = employeeEF.Get(1);
+            Employee employeeDeleted = employeeEF.Get(employeeLoaded.Id);
             Assert.IsNull(employeeDeleted);
-        }
-
-        private void FlushChanges()
-        {
-            context.SaveChanges();
         }
 
         private void LoadData(Employee entity)
         {
             context.Employees.Add(entity);
+        }
+
+        private void FlushChanges()
+        {
+            context.SaveChanges();
         }
 
         /***************  SQLServer 2005 - SQLServer CE ***********************/

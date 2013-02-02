@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeEFInitializer.cs" />
-    <Compile Include="EmployeeEFTests.cs" />
+    <Compile Include="EmployeeEFTests_Self_Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

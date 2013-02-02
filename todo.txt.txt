@@ -3,6 +3,20 @@ Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utili
 Mejora: Que no es un Unit Test (pag 298 Art of Agile)
 Mejora: Explicar mejor como dejar siempre en el mismo estado el test, independencia, alteatorios.
 
+Nuevo: Nuke and Pave EF
+
+Nuevo: EF Mappings Tests
+
+        var objectContext = ((IObjectContextAdapter)this).ObjectContext;
+
+        var mdw = objectContext.MetadataWorkspace;
+
+        var items = mdw.GetItems<EntityType>(DataSpace.CSpace);
+        foreach (var i in items)
+        {
+            Console.WriteLine("Class Name: {0}", i.Name);
+        }
+
 Nuevo Tema:Testing Approaches
 » Keyword Driven Testing
 » Test Driven Development

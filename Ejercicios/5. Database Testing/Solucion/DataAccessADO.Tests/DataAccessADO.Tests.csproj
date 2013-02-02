@@ -65,15 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="EmployeeADODatabase.xsc">
-      <DependentUpon>EmployeeADODatabase.xsd</DependentUpon>
-    </None>
     <None Include="EmployeeADODatabase.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="EmployeeADODatabase.xss">
-      <DependentUpon>EmployeeADODatabase.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

@@ -13,11 +13,22 @@ namespace DataAccessADO.Tests
 
         private TransactionScope transactionScope;
 
+        private Employee employeeLoaded;
+
         [TestInitialize]
         public void Setup()
         {
             this.employeeADO = new EmployeeADO();
             transactionScope = new TransactionScope();
+
+            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            LoadData(employee1);
+            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            LoadData(employee2);
+            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            LoadData(employee3);
+
+            employeeLoaded = employee1;
         }
 
         [TestCleanup]
@@ -29,12 +40,12 @@ namespace DataAccessADO.Tests
         [TestMethod]
         public void Find_WithoutFilters_ReturnAllEmployees()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
-            LoadData(employee3);
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            //LoadData(employee3);
 
             List<Employee> employees = this.employeeADO.Find(null, null, null);
 
@@ -44,10 +55,10 @@ namespace DataAccessADO.Tests
         [TestMethod]
         public void Find_WithLastNameFilter_ReturnTheEmployeesWithTheExactLastName()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
 
             String lastName = "Pacheco";
 
@@ -59,12 +70,12 @@ namespace DataAccessADO.Tests
         [TestMethod]
         public void Find_WithHireDateFilters_ReturnTheEmployeesBetweenHireDates()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
-            LoadData(employee3);
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            //LoadData(employee3);
 
             DateTime startHireDate = new DateTime(2010, 12, 29);
             DateTime endHireDate = new DateTime(2010, 12, 30);
@@ -77,12 +88,12 @@ namespace DataAccessADO.Tests
         [TestMethod]
         public void Find_WithAllFilters_ReturnTheEmployeesWithTheExactLastNameAndBetweenTheHiredDates()
         {
-            Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee1);
-            Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
-            LoadData(employee2);
-            Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
-            LoadData(employee3);
+            //Employee employee1 = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee1);
+            //Employee employee2 = new Employee("Luis", "Quispe", new DateTime(2010, 12, 29));
+            //LoadData(employee2);
+            //Employee employee3 = new Employee("Luis", "Tovar", new DateTime(2010, 12, 28));
+            //LoadData(employee3);
 
             String lastName = "Pacheco";
             DateTime startHireDate = new DateTime(2010, 12, 29);
@@ -112,12 +123,12 @@ namespace DataAccessADO.Tests
         [TestMethod]
         public void Delete_TheEmployeeIsDeleted()
         {
-            Employee employee = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
-            LoadData(employee);
+            //Employee employee = new Employee("Luis", "Pacheco", new DateTime(2010, 12, 30));
+            //LoadData(employee);
 
-            this.employeeADO.Delete(1);
+            this.employeeADO.Delete(employeeLoaded.Id);
 
-            Employee employeeDeleted = this.employeeADO.Get(1);
+            Employee employeeDeleted = this.employeeADO.Get(employeeLoaded.Id);
             Assert.IsNull(employeeDeleted);
         }
 
