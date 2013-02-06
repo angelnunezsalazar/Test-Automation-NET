@@ -26,7 +26,7 @@
 
             var total = orderServices.CalculateTotal(order);
 
-            Assert.AreEqual(110, total);
+            Assert.AreEqual(90, total);
         }
 
         [TestMethod]

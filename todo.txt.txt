@@ -1,11 +1,11 @@
 Mejora: Colocar mini imágenes de web pages en el slide "Page Object Pattern"
 Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utilizar diferentes ambientes(testing,producción)
-Mejora: Que no es un Unit Test (pag 298 Art of Agile)
-Mejora: Explicar mejor como dejar siempre en el mismo estado el test, independencia, alteatorios.
 Mejora: DB Schemas Utilizando CodeGeneration
 http://stackoverflow.com/questions/1519612/unit-testing-using-ndbunit-framework
 Mejora: Cambiar gráfico de "Donde utilizar estos tests"
 Mejora: Pensar bien como entregar el ejercicio FullStack (sin lib?, sin proyectos?)
+Bug: Cambiar el Exception del Carro Compras
+Mejora: Dependency Inyection Container, continuar desde el anterior? usar full stack? ejercicio simple?
 
 Nuevo: Nuke and Pave EF
 
