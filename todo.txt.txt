@@ -5,6 +5,7 @@ http://stackoverflow.com/questions/1519612/unit-testing-using-ndbunit-framework
 Mejora: Cambiar gráfico de "Donde utilizar estos tests"
 Mejora: Pensar bien como entregar el ejercicio FullStack (sin lib?, sin proyectos?)
 Bug: Cambiar el Exception del Carro Compras
+Bug: EF Plural Ejercicio DB Testing.
 Mejora: Dependency Inyection Container, continuar desde el anterior? usar full stack? ejercicio simple?
 
 Nuevo: Nuke and Pave EF
