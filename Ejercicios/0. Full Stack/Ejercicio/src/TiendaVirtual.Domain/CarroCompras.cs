@@ -30,7 +30,7 @@
         {
             LineaCarroCompras linea = BuscarLinea(productoId);
             if (linea == null)
-                throw new Exception("No existe el producto");
+                throw new InvalidOperationException("No existe el producto");
 
             if (cantidad == 0)
                 this.RemoverLinea(productoId);
@@ -42,7 +42,7 @@
         {
             LineaCarroCompras linea = BuscarLinea(productoId);
             if (linea == null)
-                throw new Exception("No existe el producto");
+                throw new InvalidOperationException("No existe el producto");
 
             this.detalle.RemoveAll(l => l.Producto.Id == productoId);
         }

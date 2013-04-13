@@ -1,28 +1,26 @@
-Mejora: Colocar mini imágenes de web pages en el slide "Page Object Pattern"
-Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utilizar diferentes ambientes(testing,producción)
-Mejora: DB Schemas Utilizando CodeGeneration
-http://stackoverflow.com/questions/1519612/unit-testing-using-ndbunit-framework
+INTRODUCCIÓN
+Mejora: Utilizar el Modelo en V para explicar la diferencia entre los tests del 1er cuadrante
+
+FULL STACK
 Mejora: Cambiar gráfico de "Donde utilizar estos tests"
 Mejora: Pensar bien como entregar el ejercicio FullStack (sin lib?, sin proyectos?)
-Bug: Cambiar el Exception del Carro Compras
-Bug: EF Plural Ejercicio DB Testing.
+
+UNIT TESTING
+Mejora:Testing Approaches (Keyword DT, Test DD, Data DT)
+
+DEPENDENCY INJECTION
 Mejora: Dependency Inyection Container, continuar desde el anterior? usar full stack? ejercicio simple?
 
+DB TESTING
+Mejora: DB Schemas Utilizando CodeGeneration
+http://stackoverflow.com/questions/1519612/unit-testing-using-ndbunit-framework
 Nuevo: Nuke and Pave EF
-
 Nuevo: EF Mappings Tests
 
-        var objectContext = ((IObjectContextAdapter)this).ObjectContext;
+var objectContext = ((IObjectContextAdapter)this).ObjectContext;
+var mdw = objectContext.MetadataWorkspace;
+var items = mdw.GetItems<EntityType>(DataSpace.CSpace);
 
-        var mdw = objectContext.MetadataWorkspace;
-
-        var items = mdw.GetItems<EntityType>(DataSpace.CSpace);
-        foreach (var i in items)
-        {
-            Console.WriteLine("Class Name: {0}", i.Name);
-        }
-
-Nuevo Tema:Testing Approaches
-» Keyword Driven Testing
-» Test Driven Development
-» Data Driven Testing
+WEB TESTING
+Mejora: Colocar mini imágenes de web pages en el slide "Page Object Pattern"
+Mejora: Organizar mejor el ejercicio de "Web Testing Framework" para poder utilizar diferentes ambientes(testing,producción)

@@ -8,12 +8,13 @@ Materiales del curso "Test Automation .NET"
 
 Release History
 ---------------
-3.0 (beta) - (02/02/2013) 
-* Ejercicio "Full Stack": Aplicación de una Tienda Virtual completa que permite la aplicación de todos los tipos de tests.
+3.0(beta) - (02/02/2013) 
+* Ejercicio "Full Stack" (Tienda Virtual): Permite la aplicación de todos los tipos de tests.
 * Gráficos "¿Cuándo utilizar cada tipo de test?"
 * ORM Testing
 * Proporción de los Tipos de Tests en una aplicación
 * IOC Containers
+* Design For Testeability
 
 2.0 - (07/09/2012)
 * División de Slides
