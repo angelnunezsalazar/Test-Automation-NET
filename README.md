@@ -9,12 +9,13 @@ Materiales del curso "Test Automation .NET"
 Release History
 ---------------
 3.0(beta) - (02/02/2013) 
+* Relación de V-Model con los Test Automatizados
 * Ejercicio "Full Stack" (Tienda Virtual): Permite la aplicación de todos los tipos de tests.
-* Gráficos "¿Cuándo utilizar cada tipo de test?"
-* ORM Testing
-* Proporción de los Tipos de Tests en una aplicación
-* IOC Containers
+* Gráfico "¿En que parte de una aplicación utilizar cada tipo de test?"
+* Gráfico "Proporción recomendada de los Tipos de Tests en una aplicación"
 * Design For Testeability
+* ORM Testing
+* IOC Containers
 
 2.0 - (07/09/2012)
 * División de Slides
@@ -22,7 +23,7 @@ Release History
 
 License
 -------
-Copyright (c) 2012 "Snahider" Angel Nuñez Salazar
+Copyright (c) 2013 "Snahider" Angel Nuñez Salazar
 
 "Test Automation .NET" by Angel Nuñez Salazar is licensed under a
 [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/ "Creative Commons Attribution-ShareAlike 3.0 Unported License")
