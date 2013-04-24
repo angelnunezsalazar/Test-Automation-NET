@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailSender.cs" />
-    <Compile Include="Configuration.cs" />
-    <Compile Include="FileAppender.cs" />
-    <Compile Include="Level.cs" />
-    <Compile Include="LogManager.cs" />
+    <Compile Include="AlmacenDAO.cs" />
+    <Compile Include="AlmacenService.cs" />
+    <Compile Include="CostoEnvioDAO.cs" />
+    <Compile Include="CostoEnvioService.cs" />
+    <Compile Include="InventarioInsuficienteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

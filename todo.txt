@@ -1,13 +1,13 @@
-INTRODUCCIÓN
-Mejora: Utilizar el Modelo en V para explicar la diferencia entre los tests del 1er cuadrante
-
 FULL STACK
 Mejora: Cambiar gráfico de "Donde utilizar estos tests"
-Mejora: Pensar bien como entregar el ejercicio FullStack (sin lib?, sin proyectos?)
+Mejora: Pensar otra forma de entregar el ejercicio FullStack (sin lib?, sin proyectos?)
 
 UNIT TESTING
 Mejora:Testing Approaches (Keyword DT, Test DD, Data DT)
 Bug: Solucion CarroCompras, cambiar el Exception por InvalidOperationException en domain y tests
+
+TEST DOUBLES
+Falta: Solución 2do ejercicio "Test Doubles"
 
 DEPENDENCY INJECTION
 Mejora: Dependency Inyection Container, continuar desde el anterior? usar full stack? ejercicio simple?
