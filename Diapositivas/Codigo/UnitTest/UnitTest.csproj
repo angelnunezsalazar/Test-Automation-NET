@@ -49,6 +49,8 @@
     <Compile Include="Asserts.cs" />
     <Compile Include="CodigoLogico.cs" />
     <Compile Include="CreandoUnNuevoTest.cs" />
+    <Compile Include="NombreDeLasPruebas.cs" />
+    <Compile Include="NuestraSegundaPrueba.cs" />
     <Compile Include="PruebasGrandes.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

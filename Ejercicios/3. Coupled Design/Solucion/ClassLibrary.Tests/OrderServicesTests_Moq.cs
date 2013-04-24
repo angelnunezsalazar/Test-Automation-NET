@@ -9,7 +9,7 @@
     using Moq;
 
     [TestClass]
-    public class OrderServicesTests
+    public class OrderServicesTests_Moq
     {
         [TestMethod]
         public void CalculateTotal_WithoutCoupon_ReturnLineItemTotal()

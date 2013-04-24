@@ -48,7 +48,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderServicesTests.cs" />
+    <Compile Include="OrderServicesTests_WithoutTestDoubles.cs" />
+    <Compile Include="OrderServicesTests_Moq.cs" />
     <Compile Include="OrderServicesTests_Manual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

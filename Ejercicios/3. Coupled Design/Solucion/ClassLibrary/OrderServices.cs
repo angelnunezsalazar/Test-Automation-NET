@@ -1,4 +1,5 @@
-﻿namespace ClassLibrary
+﻿using System;
+namespace ClassLibrary
 {
     public class OrderServices
     {
@@ -29,10 +30,9 @@
 
         public void Save(Order order)
         {
-            if (IsValid(order))
-            {
-                dataAccess.SaveOrder(order);
-            }
+            if (!IsValid(order))
+                throw new Exception("Invalid Order");
+            dataAccess.SaveOrder(order);
         }
 
         private bool IsValid(Order order)
