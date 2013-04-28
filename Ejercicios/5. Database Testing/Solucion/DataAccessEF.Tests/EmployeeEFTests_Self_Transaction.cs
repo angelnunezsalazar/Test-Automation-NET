@@ -6,6 +6,8 @@ namespace DataAccessEF.Tests
     using System.Transactions;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Data.Entity.Infrastructure;
+    using System.Data.Metadata.Edm;
 
     [TestClass]
     public class EmployeeEFTests_Self_Transaction
