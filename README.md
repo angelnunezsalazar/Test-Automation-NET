@@ -8,12 +8,42 @@ Las herramientas de automatización de pruebas nos permiten verificar el comporta
 
 Entre los beneficios de utilizar pruebas automatizadas tenemos:
 
-- Ahorrar tiempo y dinero
-- Aumentar la calidad del software
-- Reducir considerablemente la cantidad de bugs
-- Poder ejecutar pruebas de manera rápida ante cualquier cambio en el software
+- Ahorrar tiempo y dinero.
+- Aumentar la calidad del software.
+- Reducir considerablemente la cantidad de bugs.
+- Poder ejecutar pruebas de manera rápida ante cualquier cambio en el software.
 
-Descripción completa: [http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/](http://www.openedgetech.com/calendario/490-pruebas-automatizadas-net/ "Automate Testing .NET")
+Contenido
+---------
+Unit Testing
+* Características de un Unit Test.
+* Patrón "Arrange-Act-Assert".
+* xUnit Frameworks - JUnit.
+* Métricas: Code Coverage, Cyclomatic Complexity.
+* Enfoques: Tradicional, Test First Programming y Data Driven Testing.
+ 
+Test Doubles
+* Inversión e inyección de dependencias.
+* State Testings vs Interaction Testing.
+* Stubs y Mocks.
+* Otros Test Doubles.
+* Mocking Frameworks.
+* Prácticas para aumentar la testeabilidad.
+* Dependency Injection Containers.
+ 
+Database Testing
+* Testing con "Raw" ADO.NET.
+* Testing con Entity Framework.
+* Outsite vs Inside DB Testing.
+* Herramientas: Sprint Test, DBUnit, tSQLt.
+* Patrones y estrategias para pruebas de BD.
+
+Web Testing
+* Estructura de Pruebas Web Automatizadas.
+* Enfoques para realizar Web Testing.
+* Recording and Playback utilizando Selenium IDE.
+* Scripting utilizando Selenium-WebDriver.
+* Page Object Pattern.
 
 Release History
 ---------------
