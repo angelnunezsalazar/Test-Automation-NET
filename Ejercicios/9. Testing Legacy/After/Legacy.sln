@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legacy", "Legacy\Legacy.csproj", "{42C295FB-8765-4629-9FDA-80B6CF836D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legacy.Tests", "Legacy.Tests\Legacy.Tests.csproj", "{336937D1-3FAE-4190-B177-771A9E005127}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42C295FB-8765-4629-9FDA-80B6CF836D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C295FB-8765-4629-9FDA-80B6CF836D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C295FB-8765-4629-9FDA-80B6CF836D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C295FB-8765-4629-9FDA-80B6CF836D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336937D1-3FAE-4190-B177-771A9E005127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336937D1-3FAE-4190-B177-771A9E005127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336937D1-3FAE-4190-B177-771A9E005127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336937D1-3FAE-4190-B177-771A9E005127}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

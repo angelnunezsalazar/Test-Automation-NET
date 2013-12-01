@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Legacy.Blog
+{
+    public class Trackback
+    {
+        internal static bool Send(TrackbackMessage message)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
