@@ -15,9 +15,9 @@ namespace ClassLibrary
             decimal itemTotal = order.ItemTotal;
             decimal discountPercentage = 0;
 
-            if (!string.IsNullOrEmpty(order.CouponCode))
+            if (!string.IsNullOrEmpty(order.Coupon))
             {
-                discountPercentage = this.dataAccess.GetPromotionalDiscount(order.CouponCode);
+                discountPercentage = this.dataAccess.GetPromotionalDiscount(order.Coupon);
             }
 
             return itemTotal - itemTotal * discountPercentage / 100;

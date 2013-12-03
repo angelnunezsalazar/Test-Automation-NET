@@ -8,6 +8,6 @@
 
         public decimal Total { get; set; }
 
-        public string CouponCode { get; set; }
+        public string Coupon { get; set; }
     }
 }

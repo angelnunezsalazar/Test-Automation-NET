@@ -23,7 +23,7 @@
         [TestMethod]
         public void CalculateTotal_WithCoupon_ReturnLineItemWithDiscount()
         {
-            Order order = new Order { CouponCode = "HAPPY", ItemTotal = 100 };
+            Order order = new Order { Coupon = "christmas", ItemTotal = 100 };
             var dataAccess = new SimpleDataAccess();
             dataAccess.CouponPercentage = 10;
             OrderServices orderServices = new OrderServices(dataAccess);

@@ -25,9 +25,9 @@
         [TestMethod]
         public void CalculateTotal_WithCoupon_ReturnLineItemWithDiscount()
         {
-            Order order = new Order { CouponCode = "HAPPY", ItemTotal = 100 };
+            Order order = new Order { Coupon = "christmas", ItemTotal = 100 };
             var dataAccess = new Mock<IDataAccess>();
-            dataAccess.Setup(x => x.GetPromotionalDiscount(order.CouponCode)).Returns(10);
+            dataAccess.Setup(x => x.GetPromotionalDiscount(order.Coupon)).Returns(10);
             OrderServices orderServices = new OrderServices(dataAccess.Object);
 
             var total = orderServices.CalculateTotal(order);
