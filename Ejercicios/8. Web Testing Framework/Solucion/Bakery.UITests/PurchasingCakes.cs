@@ -17,28 +17,25 @@
     {
         private static IWebDriver driver;
 
+        private static DataLoader dataLoader;
         [AssemblyInitialize]
         public static void SetupOnlyOnce(TestContext testContext)
         {
             driver = new ChromeDriver();
-        }
-
-        [TestCleanup]
-        public void Teardown()
-        {
-            Database.CleanTable("Products");
+            dataLoader=new DataLoader();
         }
 
         [AssemblyCleanup]
         public static void TearDownOnlyOnce()
         {
             driver.Quit();
+            dataLoader.Clean();
         }
 
         [TestMethod]
         public void SeeProductDetailsWhenPlacingOrder()
         {
-            Database.LoadData(new Product
+            dataLoader.LoadData(new Product
                 {
                     Name = "Apple Cake",
                     Description = "Default Descripcion",

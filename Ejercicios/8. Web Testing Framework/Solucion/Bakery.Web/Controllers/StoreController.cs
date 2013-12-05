@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Bakery.Web.Controllers
 {
@@ -9,25 +10,24 @@ namespace Bakery.Web.Controllers
 
     public class StoreController : Controller
     {
-        AppDbContext context=new AppDbContext();
+        DataAccess dataAccess=new DataAccess();
 
         public ActionResult ChooseProduct()
         {
-            var products = context.Products.ToList();
+            var products = dataAccess.ListAll<Product>();
             return View(products);
         }
 
-        public ActionResult PlaceOrder(int productId)
+        public ActionResult PlaceOrder(string productId)
         {
-            this.ViewBag.Product = this.context.Products.Find(productId);
+            this.ViewBag.Product = dataAccess.GetProduct(productId);
             return View();
         }
 
         [HttpPost]
         public ActionResult PlaceOrder(Order order)
         {
-            context.Orders.Add(order);
-            context.SaveChanges();
+            dataAccess.Save(order);
             return RedirectToAction("Confirmation");
         }
 

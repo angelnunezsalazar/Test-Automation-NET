@@ -1,9 +1,7 @@
 ﻿namespace Bakery.Web.Models
 {
-    public class Order
+    public class Order:Entity
     {
-        public int Id { get; set; }
-
         public string Email { get; set; }
 
         public string Address { get; set; }
