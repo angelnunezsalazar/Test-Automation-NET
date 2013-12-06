@@ -7,9 +7,9 @@ namespace Bakery.UITests.Infraestructure
 
     public class DataLoader
     {
-        private List<Entity> savedObjects = new List<Entity>();
+        private List<Product> savedObjects = new List<Product>();
 
-        public T LoadData<T>(T obj) where T : Entity
+        public T LoadData<T>(T obj) where T : Product
         {
             var dataAccess = new DataAccess();
             dataAccess.Save(obj);
