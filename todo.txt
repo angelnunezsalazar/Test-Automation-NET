@@ -9,9 +9,6 @@ Bug: Solucion CarroCompras, cambiar el Exception por InvalidOperationException e
 TEST DOUBLES
 Falta: Solución 2do ejercicio "Test Doubles"
 
-DEPENDENCY INJECTION
-Mejora: Dependency Inyection Container, continuar desde el anterior? usar full stack? ejercicio simple?
-
 DB TESTING
 Mejora: DB Schemas Utilizando CodeGeneration
 http://stackoverflow.com/questions/1519612/unit-testing-using-ndbunit-framework
